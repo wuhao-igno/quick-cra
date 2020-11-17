@@ -1,8 +1,9 @@
 import Router from "koa-router";
 import demo from "./demo";
 
-const router = new Router();
+const router = new Router({ prefix: 'api' });
 
-router.use("/prefix", demo.routes(), demo.allowedMethods());
+// url: /api/demo/**/*
+router.use("/demo", demo.routes(), demo.allowedMethods());
 
 export default router;

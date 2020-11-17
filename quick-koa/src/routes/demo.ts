@@ -2,6 +2,7 @@ import Router from "koa-router";
 
 const router = new Router();
 router
+  // url: /api/demo/:id
   .get(
     "/:id",
     async (ctx): Promise<void> => {
