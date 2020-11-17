@@ -49,8 +49,14 @@ module.exports = function (projectPath) {
       path: "cz-conventional-changelog",
     },
   };
-  packageJson.scripts.commit = "./node_modules/.bin/git-cz";
-  packageJson.scripts.release = "standard-version";
+  packageJson.scripts = {
+    start: "react-app-rewired start",
+    build: "react-app-rewired build",
+    test: "react-app-rewired test",
+    eject: "react-scripts eject",
+    commit: "./node_modules/.bin/git-cz",
+    release: "standard-version",
+  };
   writeJsonSync(`./package.json`, packageJson);
 
   // 复制基础配置文件
