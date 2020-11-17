@@ -18,14 +18,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "baseUrl": "src"
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "webpack.config.js"
   ],
   "extends": "./path.json"
 }
