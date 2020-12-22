@@ -1,11 +1,5 @@
 module.exports = {
-  extends: [
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-  ],
+  extends: ['airbnb', 'airbnb/hooks'],
   rules: {
     'no-bitwise': 'off', // 不让用位操作符，不知道为啥，先关掉
     'no-console': 0,
@@ -17,7 +11,18 @@ module.exports = {
     '@typescript-eslint/unbound-method': 0, // 允许解构方法，需要在解构的时候注意不会出现this引用问题
     'jsx-a11y/anchor-is-valid': 0,
   },
+  env: {
+    browser: true,
+  },
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    project: './tsconfig.json',
+    sourceType: 'module',
+    allowImportExportEverywhere: false,
+    ecmaFeatures: {
+      globalReturn: false,
+    },
+    babelOptions: {
+      configFile: './.babelrc.js',
+    },
   },
 };

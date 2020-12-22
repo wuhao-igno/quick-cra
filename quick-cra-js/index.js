@@ -32,14 +32,14 @@ module.exports = function (projectPath) {
   console.time('创建React应用');
   console.log('---- 开始创建 ----');
   // 用cra创建应用
-  execSync(`yarn create react-app ${projectPath} --template typescript`);
+  execSync(`yarn create react-app ${projectPath}`);
 
   // 进入目录
   chdir(`./${projectPath}`);
 
   // 添加开发依赖
   execSync(
-    `yarn add -D commitizen customize-cra cz-conventional-changelog eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier react-app-rewired standard-version @babel/plugin-proposal-decorators @typescript-eslint/eslint-plugin`
+    `yarn add -D commitizen customize-cra cz-conventional-changelog eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier react-app-rewired standard-version typescript @babel/plugin-proposal-decorators @babel/plugin-proposal-pipeline-operator  @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator @babel/eslint-parser`
   );
 
   // 修改package.json
@@ -62,7 +62,15 @@ module.exports = function (projectPath) {
   // 复制基础配置文件
   const configFiles = fs.readdirSync(`${__dirname}/configs`);
   for (const filename of configFiles) {
-    fs.copyFileSync(`${__dirname}/configs/${filename}`, `./${filename}`);
+    if (filename === ".vscode") {
+      execSync(`mkdir .vscode`);
+      fs.copyFileSync(
+        `${__dirname}/configs/.vscode/settings.json`,
+        `./.vscode/settings.json`
+      );
+    } else {
+      fs.copyFileSync(`${__dirname}/configs/${filename}`, `./${filename}`);
+    }
   }
 
   // 添加git记录
