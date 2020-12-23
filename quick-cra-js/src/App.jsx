@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
-import Layout from '@/components/Layout';
-import Home from '@/pages/Home';
-import './App.css';
-import { get, post } from '@/utils/http';
+import React from "react";
+import Layout from "@/components/Layout";
+import "./App.css";
+import { StoreProvider } from "@/model";
+import Init from "@/components/Init";
+import Router from "@/routes";
 
 function App() {
-  // 开发模式使用
-  useEffect(() => {
-    window.httpGet = get;
-    window.httpPost = post;
-  }, []);
 
   return (
-    <Layout><Home /></Layout>
+    <StoreProvider>
+      <Init>
+        <Layout>
+          <Router />
+        </Layout>
+      </Init>
+    </StoreProvider>
   );
 }
 

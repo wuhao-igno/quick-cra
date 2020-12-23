@@ -1,7 +1,10 @@
-import React from 'react';
+import { useStore } from "@/model";
+import { observer } from "mobx-react-lite";
+import React from "react";
 
-const Home = () => (
-  <div>hello world!</div>
-);
+const Home = () => {
+  const { version } = useStore();
+  return <div style={{ backgroundColor: "#fff" }}>{version}</div>;
+};
 
-export default Home;
+export default observer(Home);
