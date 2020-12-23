@@ -28,7 +28,7 @@ const writeJsonSync = (path, data) => {
  * 
  * @param {string} projectPath 项目名称
  */
-module.exports = function (projectPath) {
+module.exports = function (projectPath, template) {
   console.time('创建React应用');
   console.log('---- 开始创建 ----');
   // 用cra创建应用
@@ -77,6 +77,19 @@ module.exports = function (projectPath) {
   execSync(
     `git add -A && git commit -m "Project configuration initialization."`
   );
+
+  if (template === '--default') {
+    // 添加依赖
+    execSync("yarn add antd mobx mobx-react-lite");
+    // 清空默认敏捷
+    execSync(`rm -rf src`);
+    // 复制模板
+    execSync(`cp -r ${__dirname}/src ./`);
+    // 添加git记录
+    execSync(
+      `git add -A && git commit -m "Add Antd, Mobx, basic layout and basic utils."`
+    );
+  }
 
   console.log("---- 完成创建 ----");
   console.timeEnd("创建React应用");

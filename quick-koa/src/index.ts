@@ -1,10 +1,20 @@
 import Koa from "koa";
 import KoaBodyParser from "koa-bodyparser";
+import cors from "koa2-cors";
 import router from "./routes";
 
 const app = new Koa();
 
 app
+  .use(
+    cors({
+      allowMethods: ["GET", "POST", "OPTIONS", "HEAD"],
+      origin: () =>
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000"
+          : false,
+    })
+  )
   .use(
     async (ctx, next): Promise<void> => {
       console.time("处理时间");
