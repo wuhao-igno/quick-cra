@@ -1,8 +1,8 @@
 import React from 'react';
 import { Layout } from 'antd';
-import PageHeader from '../Header';
-import PageFooter from '../Footer';
-import PageSider from '../Sider';
+import PageHeader from '@/components/Header';
+import PageFooter from '@/components/Footer';
+import PageSider from '@/components/Sider';
 
 const {
   Header, Content, Footer, Sider,

@@ -1,12 +1,5 @@
 import React, { createContext, useContext } from 'react';
-import { useLocalObservable } from 'mobx-react-lite';
-
-const useObservableGlobalStore = () => {
-  const store = useLocalObservable(() => ({
-    version: '0.0.1',
-  }));
-  return store;
-};
+import { useObservableGlobalStore } from './store';
 
 export const StoreContext = createContext(null);
 
