@@ -37,13 +37,6 @@ cd demo
 
 ## 支持的模板类型
 
-```
-cra: quickCra,
-koa: quickKoa,
-base: quickBase,
-'cra-js': quickCraJs,
-```
-
 1. cra: `quick-cra cra [projectName]` -> 使用 `create-react-app` 创建一个 `typescript react app` ；
 
 1. cra-js: `quick-cra cra-js [projectName]` -> 使用 `create-react-app` 创建一个 `javascript react app` ，支持 `stage-1` 特性[管道操作符](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/%E7%AE%A1%E9%81%93%E6%93%8D%E4%BD%9C%E7%AC%A6)和所有 `typescript` 支持的未进入标准的实验性特性；
