@@ -1,10 +1,10 @@
 /**
  * 生成唯一 id
  */
-export const getId = () => {
+export const getUniqueId = () => {
   const array = new Uint32Array(4);
   window.crypto.getRandomValues(array);
-  let uuid = '';
+  let uuid = "";
   array.forEach((num) => {
     uuid += num.toString(16).slice(0, 8);
   });
