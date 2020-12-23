@@ -25,4 +25,11 @@ module.exports = {
       configFile: './.babelrc.js',
     },
   },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@', './src']],
+      },
+    },
+  },
 };

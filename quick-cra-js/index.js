@@ -39,7 +39,7 @@ module.exports = function (projectPath, template) {
 
   // 添加开发依赖
   execSync(
-    `yarn add -D commitizen customize-cra cz-conventional-changelog eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier react-app-rewired standard-version typescript @babel/plugin-proposal-decorators @babel/plugin-proposal-pipeline-operator  @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator @babel/eslint-parser @types/react`
+    `yarn add -D commitizen customize-cra cz-conventional-changelog eslint eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier react-app-rewired standard-version typescript @babel/plugin-proposal-decorators @babel/plugin-proposal-pipeline-operator  @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator @babel/eslint-parser @types/react eslint-import-resolver-alias`
   );
 
   // 修改package.json
