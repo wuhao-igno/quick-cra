@@ -1,3 +1,23 @@
 {
-  "javascript.validate.enable": false
+  "javascript.validate.enable": false,
+  "todo-tree.general.tags": [
+    "TODO:",
+    "FIXME:"
+  ],
+  "todo-tree.highlights.defaultHighlight": {
+    "gutterIcon": true
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO:": {
+      "foreground": "#fff",
+      "background": "#ffbd2a",
+      "iconColour": "#ffbd2a"
+    },
+    "FIXME:": {
+      "foreground": "#fff",
+      "background": "#f06292",
+      "icon": "flame",
+      "iconColour": "#f06292"
+    }
+  }
 }
